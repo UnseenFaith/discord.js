@@ -9,7 +9,7 @@ const { Error } = require('../errors');
  */
 class MessageStore extends DataStore {
   constructor(channel, iterable) {
-    super(channel.client, iterable, Message);
+    super(channel.client, iterable, channel.client.options.holds.MessageStore || Message);
     this.channel = channel;
   }
 
